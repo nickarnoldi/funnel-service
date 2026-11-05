@@ -1,0 +1,14 @@
+build/
+cache/
+application.zip
+
+.env
+.env.prod
+*.log
+
+.DS_Store
+Thumbs.db
+
+# Elastic Beanstalk Files
+.ebextensions
+.elasticbeanstalk

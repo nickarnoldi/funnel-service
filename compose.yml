@@ -1,0 +1,10 @@
+name: datawarehouse
+services:
+  db:
+    image: postgres:alpine
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+

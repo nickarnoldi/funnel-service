@@ -1,0 +1,24 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "queries"
+    schema: "schema.sql"
+    gen:
+      go:
+        package: "db"
+        out: "./../"
+        sql_package: "pgx/v5"
+        emit_prepared_queries: true
+        initialisms:
+          - "url"
+          - "id"
+        rename:
+          uuid: "UUID"
+          url: "URL"
+          ip_address: "IPAddress"
+          funnel_ids: "FunnelIDs"
+        overrides:
+          - db_type: "uuid"
+            go_type:
+              import: "github.com/google/uuid"
+              type: "UUID"
